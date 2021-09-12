@@ -1,0 +1,38 @@
+<h2>Add a new pet</h2>
+
+<div class="col-8">
+
+    <div class="form-group">
+        <label for="name">Pet's Name</label>
+        <input [(ngModel)]="name" type="text" class="form-control" id="name" aria-describedby="emailHelp" placeholder="Example: Scooby">
+        <small id="nameHelp" class="form-text text-muted">Choose a cool name for your pet.</small>
+    </div><br>
+
+    <label for="name">Pet's Gender</label>  
+    <div class="form-check">
+        <input [(ngModel)]="gender" class="form-check-input" type="radio" name="gender" id="male" value="M" checked>
+        <label class="form-check-label" for="male">
+            Male
+        </label>
+    </div>
+    <div class="form-check">
+        <input [(ngModel)]="gender" class="form-check-input" type="radio" name="gender" id="female" value="F">
+        <label class="form-check-label" for="female">
+            Female
+        </label>
+    </div><br>
+
+    <div class="form-group">
+        <label for="type">Pet's Type</label>
+        <select class="form-control" id="type" [(ngModel)]="id_type">
+            <option *ngFor="let type of types" value="{{type.id}}">
+                {{type.name}}
+            </option>
+        </select>
+    </div><br>
+
+    <div class="form-group">
+        <button class="btn btn-success" (click)="createPet()">Create</button>
+    </div>
+
+</div>

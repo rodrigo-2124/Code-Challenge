@@ -1,0 +1,40 @@
+<h2>Add a new pet</h2>
+
+<div class="col-8">
+
+    <label for="name">Pet's Gender</label>
+    <div class="form-check">
+        <input [(ngModel)]="gender" class="form-check-input" type="radio" name="gender" id="male" value="M" checked>
+        <label class="form-check-label" for="male">
+            Male
+        </label>
+    </div>
+    <div class="form-check">
+        <input [(ngModel)]="gender" class="form-check-input" type="radio" name="gender" id="female" value="F">
+        <label class="form-check-label" for="female">
+            Female
+        </label>
+    </div><br>
+
+    <div class="form-group">
+        <label for="type">Pet's Type</label>
+        <select [(ngModel)]="id_type" class="form-control" id="type">
+            <option *ngFor="let type of types" value="{{type.id}}">
+                {{type.name}}
+            </option>
+        </select>
+    </div><br>
+
+    <div class="form-group">
+        <button type="submit" class="btn btn-success" (click)="searchByTypeAndGender(id_type, gender)">Search</button>
+    </div>
+
+</div>
+<hr>
+
+
+<section>
+    <h3>Results of search by pet's type and gender</h3>
+
+    <app-search-results [searchedPets]="pets"></app-search-results>
+</section>

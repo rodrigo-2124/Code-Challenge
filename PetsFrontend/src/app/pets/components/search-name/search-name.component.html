@@ -1,0 +1,26 @@
+
+<h2>Search a pet by it's name</h2>
+
+<div class="col-8">
+
+    <div class="form-group">
+        <label for="name">Pet's Name</label>
+        <input 
+            [(ngModel)]="search" 
+            
+            type="text" class="form-control" id="name" aria-describedby="emailHelp" placeholder="Example: Scooby" >
+    </div><br>
+
+    <div class="form-group">
+        <button type="submit" class="btn btn-success" (click)="searchByName(search)">Search</button>
+    </div>
+
+</div>
+<hr>
+
+
+<section>
+    <h3>Results of search by pet's Name</h3>
+
+    <app-search-results [searchedPets]="pets"></app-search-results>
+</section>

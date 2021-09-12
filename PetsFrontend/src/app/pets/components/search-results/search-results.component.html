@@ -1,0 +1,20 @@
+<table class="table">
+    <thead class="table-dark">
+      <tr>
+        <th scope="col">Creation Date</th>
+        <th scope="col">Name</th>
+        <th scope="col">Gender</th>
+        <th scope="col">Type</th>
+        <th scope="col">ID</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr scope="row" *ngFor="let pet of searchedPets">
+        <td>{{ pet.created_at | date:'medium'}}</td>
+        <td>{{ pet.name }}</td>
+        <td>{{ pet.gender }}</td>
+        <td>{{ pet.id_type }}</td>
+        <td>{{ pet.id }}</td>
+       </tr>
+    </tbody>
+</table>
